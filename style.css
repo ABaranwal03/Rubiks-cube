@@ -6,6 +6,27 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Adjust the width as needed */
+  margin: 0 auto;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.logo {
+  position: absolute;
+  bottom: 60px; /* Adjust the distance from the bottom */
+  right: 15px; /* Adjust the distance from the right */
+  z-index: 1; /* Ensure the logo appears over the video */
+  width: 90px; /* Adjust the width of your logo as needed */
+}
+
+
 body{
   min-height: 100vh;
   background: #E3F2FD;
