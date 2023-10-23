@@ -90,7 +90,6 @@ document.ondragstart = function() { return false; }
 window.addEventListener('load', assembleCube);
 scene.addEventListener('mousedown', mousedown);
 
-// Define the Rubik's Cube as a 3x3x3 multidimensional array
 const rubiksCube = [
   [['W', 'W', 'W'], ['W', 'W', 'W'], ['W', 'W', 'W']],
   [['R', 'R', 'R'], ['R', 'R', 'R'], ['R', 'R', 'R']],
@@ -180,4 +179,5 @@ function displayRubiksCube() {
     }
   }
 }
+
 
