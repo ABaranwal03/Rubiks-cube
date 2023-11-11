@@ -2,12 +2,37 @@
 <html lang="en" >
 <head>
 <meta charset="UTF-8">
-<title>Rubik&#39;s cube in Javascript</title>
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="style.css">
+<title>Rubik's cube in Javascript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id = "rubiksCube"></div>
-  <button id="shuffle-button">Shuffle</button>
+  <button id="reset-button" onclick="resetView()">Reset</button>
+  <button id="shuffle-button" onclick="shuffleCube()">Shuffle</button>
+  <input  id="shuffle-moves" type="range" min="10" max="50">Moves</button>
+  <p class="button-group">
+    <label>
+      <input type="button" id="cube" onclick="changeSide()" value="front" checked />
+    </label>
+    <label>
+      <input type="button" id="cube" onclick="changeSide()"  value="right" checked /> 
+    </label>
+    <label>
+      <input type="button" id="cube" onclick="changeSide()"  value="back" checked /> 
+    </label>
+    <label>
+      <input type="button" id="cube" onclick="changeSide()"  value="left" checked /> 
+    </label>
+    <label>
+      <input type="button" id="cube" onclick="changeSide()" value="top" checked/>
+    </label>
+    <label>
+      <input type="button" id="cube" onclick="changeSide()" value="bottom" checked/>
+    </label>
+  </p>
+  
+  
+ 
 <div class="scene" id="scene">
 <div class="pivot centered" id="pivot" style="transform: rotateX(-35deg) rotateY(-135deg);">
 <div class="cube" id="cube">
@@ -228,6 +253,8 @@
 <div class="anchor" id="anchor1" style="transform: translateZ(3px) translateY(-33.33%) rotate(-90deg) translateY(66.67%)"></div>
 <div class="anchor" id="anchor0" style="transform: translateZ(3px) translateY(-33.33%) rotate(0deg) translateY(66.67%)"></div>
 </div>
-<script src="script.js"></script>
+<script src = "shuffle.js"></script>
+<script src = "s.js"></script>
+
 </body>
 </html>
