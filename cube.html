@@ -10,28 +10,13 @@
   <button id="reset-button" onclick="resetView()">Reset</button>
   <button id="shuffle-button" onclick="shuffleCube()">Shuffle</button>
   <input  id="shuffle-moves" type="range" min="10" max="50">Moves</button>
-  <p class="button-group">
-    <label>
-      <input type="button" id="cube" onclick="changeSide()" value="front" checked />
-    </label>
-    <label>
-      <input type="button" id="cube" onclick="changeSide()"  value="right" checked /> 
-    </label>
-    <label>
-      <input type="button" id="cube" onclick="changeSide()"  value="back" checked /> 
-    </label>
-    <label>
-      <input type="button" id="cube" onclick="changeSide()"  value="left" checked /> 
-    </label>
-    <label>
-      <input type="button" id="cube" onclick="changeSide()" value="top" checked/>
-    </label>
-    <label>
-      <input type="button" id="cube" onclick="changeSide()" value="bottom" checked/>
-    </label>
-  </p>
-  
-  
+  <button id="rotateTop">Rotate Top</button>
+  <button id="rotateBottom">Rotate Bottom</button>
+  <button id="rotateFront">Rotate Front</button>
+  <button id="rotateBack">Rotate Back</button>
+  <button id="rotateLeft">Rotate Left</button>
+  <button id="rotateRight">Rotate Right</button>
+  <button id = "solveButton">Solve</button>
  
 <div class="scene" id="scene">
 <div class="pivot centered" id="pivot" style="transform: rotateX(-35deg) rotateY(-135deg);">
@@ -254,6 +239,5 @@
 <div class="anchor" id="anchor0" style="transform: translateZ(3px) translateY(-33.33%) rotate(0deg) translateY(66.67%)"></div>
 </div>
 <script src = "shuffle.js"></script>
-<script src = "s.js"></script>
 </body>
 </html>
