@@ -291,14 +291,53 @@ document.ondragstart = function () {
 window.addEventListener("load", assembleCube);
 scene.addEventListener("mousedown", mousedown);
 
-/*
-const rubiksCube = [
-  [['W', 'W', 'W'], ['W', 'W', 'W'], ['W', 'W', 'W']],
-  [['R', 'R', 'R'], ['R', 'R', 'R'], ['R', 'R', 'R']],
-  [['B', 'B', 'B'], ['B', 'B', 'B'], ['B', 'B', 'B']],
-  [['O', 'O', 'O'], ['O', 'O', 'O'], ['O', 'O', 'O']],
-  [['G', 'G', 'G'], ['G', 'G', 'G'], ['G', 'G', 'G']],
-  [['Y', 'Y', 'Y'], ['Y', 'Y', 'Y'], ['Y', 'Y', 'Y']]
-];
+const rotateTopButton = document.getElementById('rotateTop');
+        const rotateBottomButton = document.getElementById('rotateBottom');
+        const rotateFrontButton = document.getElementById('rotateFront');
+        const rotateBackButton = document.getElementById('rotateBack');
+        const rotateLeftButton = document.getElementById('rotateLeft');
+        const rotateRightButton = document.getElementById('rotateRight');
 
-*/
+        const solveButton = document.getElementById('solveButton');
+
+        rotateTopButton.addEventListener('click', () => rotateCube('top'));
+        rotateBottomButton.addEventListener('click', () => rotateCube('bottom'));
+        rotateFrontButton.addEventListener('click', () => rotateCube('front'));
+        rotateBackButton.addEventListener('click', () => rotateCube('back'));
+        rotateLeftButton.addEventListener('click', () => rotateCube('left'));
+        rotateRightButton.addEventListener('click', () => rotateCube('right'));
+        solveButton.addEventListener('click', solveCube);
+        function solveCube() {
+          // a basic solve algorithm
+          const moves = ['top', 'bottom', 'front', 'back', 'left', 'right'];
+          const delay = 500; // Milliseconds delay between moves
+
+          const performSolveMove = (index) => {
+              if (index < moves.length) {
+                  rotateCube(moves[index]);
+                  setTimeout(() => performSolveMove(index + 1), delay);
+              }
+          };
+
+          // Start solving by calling the function with index 0
+          performSolveMove(0);
+      }
+        function rotateCube(direction) {
+          // rotatecube - takes direction as a parameter
+          // faceMap - object to map the direction to corresponding face index
+            const faceMap = {
+                'top': 0,
+                'bottom': 1,
+                'front': 2,
+                'back': 3,
+                'left': 4,
+                'right': 5
+            };
+
+            const face = faceMap[direction];
+            const cw = true; // clockwise, you can modify this based on your requirement
+
+            // Call the existing animateRotation function with the specified face and direction
+            animateRotation(face, cw, Date.now());
+          }
+      
